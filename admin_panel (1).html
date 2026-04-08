@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+
+<h2>Manage Users</h2>
+
+
+<form id="searchUserForm" onsubmit="searchUser(event)">
+    Search User: <input type="text" id="searchUserInput" placeholder="Enter username or email">
+    <button type="submit">Search</button>
+</form>
+
+
+<table border="1" id="userTable">
+    <tr>
+        <th>User ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>dummyuser1</td>
+        <td>dummy1@example.com</td>
+        <td>
+            <button onclick="alert('Edit user 1')">Edit</button>
+            <button onclick="alert('Delete user 1')">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>dummyuser2</td>
+        <td>dummy2@example.com</td>
+        <td>
+            <button onclick="alert('Edit user 2')">Edit</button>
+            <button onclick="alert('Delete user 2')">Delete</button>
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Manage Products</h2>
+
+
+<h3>Add New Product</h3>
+<form onsubmit="addProduct(event)">
+    Product Name: <input type="text" id="newProductName"><br><br>
+    Price: <input type="number" id="newProductPrice"><br><br>
+    Quantity: <input type="number" id="newProductQty"><br><br>
+    Description: <input type="text" id="newProductDesc"><br><br>
+    <button type="submit">Add Product</button>
+</form>
+
+
+<h3>Search Products</h3>
+<form id="searchProductForm" onsubmit="searchProduct(event)">
+    Search Product: <input type="text" id="searchProductInput" placeholder="Enter name or description">
+    <button type="submit">Search</button>
+</form>
+
+
+<h3>Existing Products</h3>
+<table border="1" id="productTable">
+    <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Product A</td>
+        <td>10.00</td>
+        <td>100</td>
+        <td>Sample description A</td>
+        <td>
+            <button onclick="alert('Edit Product 1')">Edit</button>
+            <button onclick="alert('Delete Product 1')">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Product B</td>
+        <td>15.00</td>
+        <td>50</td>
+        <td>Sample description B</td>
+        <td>
+            <button onclick="alert('Edit Product 2')">Edit</button>
+            <button onclick="alert('Delete Product 2')">Delete</button>
+        </td>
+    </tr>
+</table>
+
+<p>
+    <a href="index.html"><button type="button">Back to Home</button></a>
+</p>
+
+<script>
+
+    function searchUser(event) {
+        event.preventDefault();
+        const input = document.getElementById('searchUserInput').value.toLowerCase();
+        const table = document.getElementById('userTable');
+        const rows = table.getElementsByTagName('tr');
+
+        for (let i = 1; i < rows.length; i++) { // skip header
+            const username = rows[i].cells[1].textContent.toLowerCase();
+            const email = rows[i].cells[2].textContent.toLowerCase();
+            rows[i].style.display = (username.includes(input) || email.includes(input)) ? '' : 'none';
+        }
+    }
+
+
+    function searchProduct(event) {
+        event.preventDefault();
+        const input = document.getElementById('searchProductInput').value.toLowerCase();
+        const table = document.getElementById('productTable');
+        const rows = table.getElementsByTagName('tr');
+
+        for (let i = 1; i < rows.length; i++) { // skip header
+            const name = rows[i].cells[1].textContent.toLowerCase();
+            const desc = rows[i].cells[4].textContent.toLowerCase();
+            rows[i].style.display = (name.includes(input) || desc.includes(input)) ? '' : 'none';
+        }
+    }
+
+
+    function addProduct(event) {
+        event.preventDefault();
+        const name = document.getElementById('newProductName').value;
+        const price = document.getElementById('newProductPrice').value;
+        const qty = document.getElementById('newProductQty').value;
+        const desc = document.getElementById('newProductDesc').value;
+
+        if(name && price && qty && desc) {
+            alert(`New product added:\nName: ${name}\nPrice: $${price}\nQuantity: ${qty}\nDescription: ${desc}`);
+        } else {
+            alert('Please fill all product fields.');
+        }
+    }
+</script>
+</body>
+</html>

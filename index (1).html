@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Retail System</title>
+</head>
+<body>
+<h1>Intelligent Retail Inventory & Analytics System</h1>
+
+<h2>User Login</h2>
+<form id="userLoginForm">
+    Username: <input type="text" id="userUsername" required><br><br>
+    Password: <input type="password" id="userPassword" required><br><br>
+    <button type="submit">Sign In</button>
+</form>
+
+<h2>Admin Login</h2>
+<p>Only authorized admins can access the admin panel:</p>
+<form id="adminLoginForm">
+    Admin Username: <input type="text" id="adminUsername" required><br><br>
+    Admin Password: <input type="password" id="adminPassword" required><br><br>
+    <button type="submit">Admin Sign In</button>
+</form>
+
+<h3>Or continue as guest:</h3>
+<a href="browse_products.html"><button type="button">Continue as Guest</button></a>
+
+<script>
+
+document.getElementById('userLoginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('userUsername').value;
+    const password = document.getElementById('userPassword').value;
+
+    // Dummy user credentials
+    if(username === 'user' && password === 'userpass'){
+        alert('User logged in!');
+        window.location.href = 'index_user.html';
+    } else {
+        alert('Incorrect user credentials. Try guest mode or sign in again.');
+    }
+});
+
+
+document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('adminUsername').value;
+    const password = document.getElementById('adminPassword').value;
+
+    // Dummy admin credentials
+    if(username === 'admin' && password === 'adminpass'){
+        alert('Admin logged in!');
+        window.location.href = 'admin_panel.html';
+    } else {
+        alert('Incorrect admin credentials. Only authorized admins may sign in.');
+    }
+});
+</script>
+</body>
+</html>

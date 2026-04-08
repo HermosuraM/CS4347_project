@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Products</title>
+    <script>
+        function searchProducts() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const products = document.getElementById("productList").getElementsByTagName("li");
+
+            for (let i = 0; i < products.length; i++) {
+                let productName = products[i].textContent.toLowerCase();
+                if (productName.includes(input)) {
+                    products[i].style.display = "";
+                } else {
+                    products[i].style.display = "none";
+                }
+            }
+
+            event.preventDefault(); 
+        }
+    </script>
+</head>
+<body>
+<h1>Product Catalog</h1>
+<p>Select a product to view details:</p>
+
+
+<form onsubmit="searchProducts()">
+    Product Name: <input type="text" id="searchInput" placeholder="Search products">
+    <button type="submit">Search</button>
+</form>
+
+<ul id="productList">
+    <li>Product A - <a href="product_details.html">View Details</a></li>
+    <li>Product B - <a href="product_details.html">View Details</a></li>
+    <li>Product C - <a href="product_details.html">View Details</a></li>
+</ul>
+
+<p>
+    <a href="cart.html"><button type="button">View Cart</button></a>
+    <a href="index.html"><button type="button">Back to Home</button></a>
+</p>
+</body>
+</html>
