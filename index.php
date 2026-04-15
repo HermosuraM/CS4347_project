@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><link rel="stylesheet" href="style.css"></head>
+<html><head><link rel="stylesheet" href="assets/style.css"></head>
 <body>
 <h1>Retail System</h1>
 

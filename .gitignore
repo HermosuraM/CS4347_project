@@ -1,0 +1,24 @@
+# Dependencies & packages
+vendor/
+node_modules/
+
+# Environment & credentials
+.env
+*.env
+config/local.php
+
+# Editor & OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+
+# PHP logs & cache
+*.log
+*.cache
+/tmp/
+
+# Uploaded files
+uploads/
