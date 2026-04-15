@@ -1,3 +1,3 @@
-1,alice,alice@example.com,hash1,active
-2,bob,bob@example.com,hash2,active
-3,charlie,charlie@example.com,hash3,suspended
+1,alice,alice@example.com,"$2b$12$ZklopggGy02ieMrHGyZeKO9SVjWxlXh1w4MmvPZ1KrMT4o8kUEVBG",active
+2,bob,bob@example.com,"$2b$12$y6z25ge0hAQ1FjavrkhPqeAcNGy7LGj6S1R7.jrOYaNUhLLLgMKQy",active
+3,charlie,charlie@example.com,"$2b$12$JpOTSRj0Y/s7fBWI3KC6/eM8PGmr3LM8Wu3xo8zADwEq/Om7NAYHW",suspended

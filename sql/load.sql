@@ -1,108 +1,83 @@
--- your code goes here
--- ------------------------
 -- Load USER table
--- ------------------------
-LOAD DATA INFILE 'user.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/USER.csv'
 INTO TABLE USER
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load USER_PROFILE table
--- ------------------------
-LOAD DATA INFILE 'user_profile.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/USER_PROFILE.csv'
 INTO TABLE USER_PROFILE
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load ADDRESS table
--- ------------------------
-LOAD DATA INFILE 'address.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/ADDRESS.csv'
 INTO TABLE ADDRESS
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load PRODUCT table
--- ------------------------
-LOAD DATA INFILE 'product.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/PRODUCT.csv'
 INTO TABLE PRODUCT
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load CATEGORY table
--- ------------------------
-LOAD DATA INFILE 'category.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/CATEGORY.csv'
 INTO TABLE CATEGORY
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load PRODUCT_CATEGORY table
--- ------------------------
-LOAD DATA INFILE 'product_category.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/PRODUCT_CATEGORY.csv'
 INTO TABLE PRODUCT_CATEGORY
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load PRODUCT_IMAGE table
--- ------------------------
-LOAD DATA INFILE 'product_image.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/PRODUCT_IMAGE.csv'
 INTO TABLE PRODUCT_IMAGE
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load CART table
--- ------------------------
-LOAD DATA INFILE 'cart.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/CART.csv'
 INTO TABLE CART
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load CART_ITEM table
--- ------------------------
-LOAD DATA INFILE 'cart_item.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/CART_ITEM.csv'
 INTO TABLE CART_ITEM
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load ORDER_TABLE table
--- ------------------------
-LOAD DATA INFILE 'order_table.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/ORDER_TABLE.csv'
 INTO TABLE ORDER_TABLE
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load ORDER_ITEM table
--- ------------------------
-LOAD DATA INFILE 'order_item.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/ORDER_ITEM.csv'
 INTO TABLE ORDER_ITEM
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
--- ------------------------
 -- Load PAYMENT table
--- ------------------------
-LOAD DATA INFILE 'payment.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/PAYMENT.csv'
 INTO TABLE PAYMENT
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';

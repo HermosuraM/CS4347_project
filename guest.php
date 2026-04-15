@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="assets/style.css"></head>
+<body>
 <h1>Guest</h1>
-<a href="browse_products.php">Browse</a><br>
-<a href="register.php">Register</a>
+<a href="shop/browse.php">Browse Products</a><br>
+<a href="auth/register.php">Create an account</a>
+</body>
+</html>

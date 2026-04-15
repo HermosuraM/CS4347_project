@@ -1,4 +1,18 @@
-<?php include 'db.php';
-$conn->query("UPDATE PRODUCT SET name='$_POST[name]',price='$_POST[price]',stock_quantity='$_POST[quantity]',description='$_POST[description]' WHERE product_id=$_POST[id]");
-header("Location: admin_panel.php");
-?>
+<?php
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: ../index.php');
+    exit;
+}
+include '../config/db.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $stmt = $conn->prepare(
+        "UPDATE PRODUCT SET name=?, price=?, stock_quantity=?, description=? WHERE product_id=?"
+    );
+    $stmt->bind_param('sdisi', $_POST['name'], $_POST['price'], $_POST['quantity'], $_POST['description'], $_POST['id']);
+    $stmt->execute();
+}
+
+header('Location: panel.php');
+exit;
