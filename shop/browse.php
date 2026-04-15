@@ -6,7 +6,7 @@ $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 if ($search !== '') {
     $stmt = $conn->prepare(
-        "SELECT p.*, pi.image_url
+        "SELECT p.*, ANY_VALUE(pi.image_url) AS image_url
          FROM PRODUCT p
          LEFT JOIN PRODUCT_IMAGE pi ON pi.product_id = p.product_id
          WHERE p.is_active = 1 AND (p.name LIKE ? OR p.description LIKE ?)
@@ -18,7 +18,7 @@ if ($search !== '') {
     $products = $stmt->get_result();
 } else {
     $products = $conn->query(
-        "SELECT p.*, pi.image_url
+        "SELECT p.*, ANY_VALUE(pi.image_url) AS image_url
          FROM PRODUCT p
          LEFT JOIN PRODUCT_IMAGE pi ON pi.product_id = p.product_id
          WHERE p.is_active = 1

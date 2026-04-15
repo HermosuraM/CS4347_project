@@ -8,7 +8,7 @@ if (!isset($_GET['id'])) {
 }
 
 $stmt = $conn->prepare(
-    "SELECT p.*, pi.image_url, pi.alt_text,
+    "SELECT p.*, ANY_VALUE(pi.image_url) AS image_url, ANY_VALUE(pi.alt_text) AS alt_text,
             GROUP_CONCAT(c.name ORDER BY c.name SEPARATOR ', ') AS categories
      FROM PRODUCT p
      LEFT JOIN PRODUCT_IMAGE pi ON pi.product_id = p.product_id
