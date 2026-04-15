@@ -13,6 +13,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'user') {
 <nav>
     <a href="../shop/browse.php">Browse Products</a> |
     <a href="../shop/cart.php">My Cart</a> |
+    <a href="orders.php">My Orders</a> |
     <a href="profile.php">My Profile</a> |
     <a href="../auth/logout.php">Logout</a>
 </nav>

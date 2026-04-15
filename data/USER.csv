@@ -1,3 +1,4 @@
-1,alice,alice@example.com,"$2b$12$ZklopggGy02ieMrHGyZeKO9SVjWxlXh1w4MmvPZ1KrMT4o8kUEVBG",active
-2,bob,bob@example.com,"$2b$12$y6z25ge0hAQ1FjavrkhPqeAcNGy7LGj6S1R7.jrOYaNUhLLLgMKQy",active
-3,charlie,charlie@example.com,"$2b$12$JpOTSRj0Y/s7fBWI3KC6/eM8PGmr3LM8Wu3xo8zADwEq/Om7NAYHW",suspended
+1,admin,admin@example.com,"$2b$12$.odbz2GQP8P2gAJdKvVjx.eQFArNMlaa1lJlRE.pJPL6mEfJQwxdW",active
+2,alice,alice@example.com,"$2b$12$ZklopggGy02ieMrHGyZeKO9SVjWxlXh1w4MmvPZ1KrMT4o8kUEVBG",active
+3,bob,bob@example.com,"$2b$12$y6z25ge0hAQ1FjavrkhPqeAcNGy7LGj6S1R7.jrOYaNUhLLLgMKQy",active
+4,charlie,charlie@example.com,"$2b$12$JpOTSRj0Y/s7fBWI3KC6/eM8PGmr3LM8Wu3xo8zADwEq/Om7NAYHW",suspended
