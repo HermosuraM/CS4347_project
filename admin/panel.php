@@ -1,9 +1,14 @@
 <?php
 session_start();
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header('Location: ../index.php');
-    exit;
+
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    die("Access denied.");
+}
+
 include '../config/db.php';
 
 $search_user    = isset($_GET['search_user'])    ? trim($_GET['search_user'])    : '';
@@ -85,8 +90,11 @@ if ($search_product !== '') {
                         <?php echo $u['status'] === 'active' ? 'Suspend' : 'Activate'; ?>
                     </a>
                     &nbsp;|&nbsp;
-                    <a href="delete_user.php?id=<?php echo (int)$u['user_id']; ?>"
-                       onclick="return confirm('Delete this user permanently?')">Delete</a>
+                    <form action="delete_user.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="id" value="<?php echo (int)$u['user_id']; ?>">
+                        <button onclick="return confirm('Delete this user permanently?')">Delete</button>
+                    </form>
+                        onclick="return confirm('Delete this user permanently?')">Delete</a>
                 </td>
             </tr>
         <?php endwhile; ?>
@@ -131,8 +139,11 @@ if ($search_product !== '') {
                 <td>
                     <a href="edit_product.php?id=<?php echo (int)$row['product_id']; ?>">Edit</a>
                     &nbsp;|&nbsp;
-                    <a href="delete_product.php?id=<?php echo (int)$row['product_id']; ?>"
-                       onclick="return confirm('Delete this product?')">Delete</a>
+                    <form action="delete_product.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="id" value="<?php echo (int)$row['product_id']; ?>">
+                        <button onclick="return confirm('Delete this product?')">Delete</button>
+                    </form>
+                        onclick="return confirm('Delete this product?')">Delete</a>
                 </td>
             </tr>
         <?php endwhile; ?>
