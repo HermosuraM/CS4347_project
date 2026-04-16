@@ -1,13 +1,20 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header('Location: ../index.php');
-    exit;
+    die("Access denied.");
 }
+
 include '../config/db.php';
 
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+if ($id <= 0) {
+    header('Location: panel.php');
+    exit;
+}
+
 $stmt = $conn->prepare("SELECT * FROM PRODUCT WHERE product_id = ?");
-$stmt->bind_param('i', $_GET['id']);
+$stmt->bind_param('i', $id);
 $stmt->execute();
 $p = $stmt->get_result()->fetch_assoc();
 
